@@ -1,19 +1,19 @@
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Warrimoo Blog home">
-      <span class="brand__icon">
-        <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-          <ellipse cx="7" cy="9" rx="2.2" ry="3"/><ellipse cx="12" cy="7.5" rx="2.2" ry="3"/><ellipse cx="17" cy="9" rx="2.2" ry="3"/>
-          <path d="M12 12c4 0 6.5 2.6 6.5 5.2 0 2-1.6 3.3-3.3 2.8-1.2-.3-2-.5-3.2-.5s-2 .2-3.2.5c-1.7.5-3.3-.8-3.3-2.8C5.5 14.6 8 12 12 12Z"/>
-        </svg>
-      </span>
-      warrimoo <span class="brand__accent">blog</span>
-    </a>
+    <div class="brand-group">
+      <a class="brand" href="https://warrimoo.net" aria-label="Warrimoo home">
+        <img class="brand__glyph" src="https://warrimoo.net/assets/img/favicon.svg" alt="" width="38" height="38">
+        warrimoo
+      </a>
+      <span class="brand-sep" aria-hidden="true">/</span>
+      <a class="brand brand--sub" href="{{ '/' | relative_url }}" aria-label="Blog home">
+        blog
+      </a>
+    </div>
     <nav class="site-nav" aria-label="Primary">
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Posts</a>
       <a href="{{ '/categories' | relative_url }}"{% if page.url == '/categories' %} aria-current="page"{% endif %}>Categories</a>
       <a href="{{ '/about' | relative_url }}"{% if page.url == '/about' or page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
-      <a class="nav-back" href="https://warrimoo.net">warrimoo.net</a>
     </nav>
     <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -26,8 +26,11 @@
   <a href="{{ '/categories' | relative_url }}">Categories</a>
   <a href="{{ '/about' | relative_url }}">About</a>
   <a href="https://warrimoo.net">warrimoo.net</a>
-  <svg style="margin:1.6rem auto 0;width:44px;opacity:0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" color="var(--cream)">
-    <ellipse cx="7" cy="9" rx="2.2" ry="3"/><ellipse cx="12" cy="7.5" rx="2.2" ry="3"/><ellipse cx="17" cy="9" rx="2.2" ry="3"/>
-    <path d="M12 12c4 0 6.5 2.6 6.5 5.2 0 2-1.6 3.3-3.3 2.8-1.2-.3-2-.5-3.2-.5s-2 .2-3.2.5c-1.7.5-3.3-.8-3.3-2.8C5.5 14.6 8 12 12 12Z"/>
+  <svg style="margin:1.6rem auto 0;width:44px;opacity:0.5" viewBox="0 0 64 64" aria-hidden="true">
+    <ellipse cx="20" cy="22" rx="6" ry="8" fill="#FFF9EE"/>
+    <ellipse cx="32" cy="18" rx="6" ry="8" fill="#FF6F5E"/>
+    <ellipse cx="44" cy="22" rx="6" ry="8" fill="#FFF9EE"/>
+    <path d="M16 40 Q16 30 32 30 Q48 30 48 40 Q48 47 44 50 Q40 47 36 50 Q32 53 28 50 Q24 47 20 50 Q16 47 16 40 Z" fill="#FFF9EE"/>
+    <path d="M14 56 Q18 52 23 56 T32 56 T41 56 T50 56" fill="none" stroke="#13A89E" stroke-width="3.5" stroke-linecap="round"/>
   </svg>
 </nav>

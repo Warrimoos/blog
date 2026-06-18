@@ -164,6 +164,12 @@ button { font: inherit; cursor: pointer; }
   gap: 1rem;
 }
 
+.brand-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -176,17 +182,21 @@ button { font: inherit; cursor: pointer; }
   color: var(--cream);
   transition: color 0.3s ease;
 }
-.brand__icon {
-  width: 38px; height: 38px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: var(--ocean);
-  box-shadow: var(--shadow-soft);
-  flex-shrink: 0;
+.brand--sub {
+  font-size: 1.15rem;
+  color: var(--sun);
+  transition: color 0.3s ease;
 }
-.brand__icon svg { width: 22px; height: 22px; }
-.brand__accent { color: var(--sun); }
+.brand__glyph { width: 38px; height: 38px; border-radius: 12px; box-shadow: var(--shadow-soft); }
+
+.brand-sep {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: rgba(255, 249, 238, 0.35);
+  user-select: none;
+  transition: color 0.3s ease;
+}
 
 .site-nav { display: none; }
 
@@ -224,7 +234,8 @@ button { font: inherit; cursor: pointer; }
   height: 64px;
 }
 .site-header.is-scrolled .brand { color: var(--ink); }
-.site-header.is-scrolled .brand__accent { color: var(--ocean); }
+.site-header.is-scrolled .brand--sub { color: var(--ocean); }
+.site-header.is-scrolled .brand-sep { color: rgba(22, 56, 76, 0.25); }
 .site-header.is-scrolled .nav-toggle { background: var(--sand-200); }
 .site-header.is-scrolled .nav-toggle span { background: var(--ink); }
 
@@ -301,22 +312,8 @@ body.nav-locked { overflow: hidden; }
   }
   .site-nav a:hover::after,
   .site-nav a[aria-current="page"]::after { width: 55%; }
-  .site-nav .nav-back {
-    margin-left: 0.6rem;
-    background: rgba(255, 251, 241, 0.14);
-    border: 1.5px solid rgba(255, 249, 238, 0.4);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-  .site-nav .nav-back::after { display: none; }
-  .site-nav .nav-back:hover { background: rgba(255, 251, 241, 0.26); }
   .site-header.is-scrolled .site-nav a { color: var(--ink); }
   .site-header.is-scrolled .site-nav a:hover { color: var(--ink-800); }
-  .site-header.is-scrolled .site-nav .nav-back {
-    background: var(--sand-100);
-    border-color: var(--sand-300);
-    color: var(--ink);
-  }
 }
 
 /* ---------- 5. Blog hero ---------- */
