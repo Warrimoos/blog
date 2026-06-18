@@ -1,0 +1,62 @@
+# Warrimoo Blog — blog.warrimoo.net
+title: Warrimoo Blog
+description: >-
+  Thoughts on AI, technology, veterinary software, and building things
+  that matter — from the team at Warrimoo.
+url: "https://blog.warrimoo.net"
+baseurl: ""
+author:
+  name: Steve Rose
+  email: steve@warrimoo.net
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:title/
+paginate: 8
+paginate_path: "/page/:num/"
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Collections
+collections:
+  authors:
+    output: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: steve
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Feed
+feed:
+  path: feed.xml
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

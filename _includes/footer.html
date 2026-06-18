@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="https://warrimoo.net" class="footer-logo">Warrimoo</a>
+      <p class="footer-tagline">{{ site.description }}</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Blog</h4>
+        <a href="{{ '/' | relative_url }}">All Posts</a>
+        <a href="{{ '/categories' | relative_url }}">Categories</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Warrimoo</h4>
+        <a href="https://warrimoo.net">Home</a>
+        <a href="https://warrimoo.net/apps/treatmypet.html">TreatMyPet</a>
+        <a href="https://warrimoo.net/privacy.html">Privacy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} Warrimoo. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

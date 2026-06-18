@@ -1,0 +1,28 @@
+---
+layout: page
+title: Tags
+subtitle: Browse by tag
+permalink: /tags/
+---
+
+<section class="taxonomy-section">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+    {% assign tag_name = tag[0] %}
+    {% assign posts = tag[1] %}
+    <div class="taxonomy-group" id="{{ tag_name | slugify }}">
+      <h2 class="taxonomy-heading">
+        #{{ tag_name }}
+        <span class="count">{{ posts.size }}</span>
+      </h2>
+      <ul class="taxonomy-list">
+        {% for post in posts %}
+        <li class="taxonomy-item">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</section>

@@ -1,0 +1,24 @@
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-brand">
+      <svg class="brand-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="14" fill="var(--ocean)"/>
+        <path d="M10 20c2-6 4-10 6-10s4 4 6 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="13" cy="14" r="1.5" fill="#fff"/>
+        <circle cx="19" cy="14" r="1.5" fill="#fff"/>
+      </svg>
+      <span class="brand-text">Warrimoo <span class="brand-accent">Blog</span></span>
+    </a>
+
+    <nav class="site-nav" id="site-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-link{% if page.url == '/' %} active{% endif %}">Posts</a>
+      <a href="{{ '/categories' | relative_url }}" class="nav-link{% if page.url == '/categories' %} active{% endif %}">Categories</a>
+      <a href="{{ '/about' | relative_url }}" class="nav-link{% if page.url == '/about' %} active{% endif %}">About</a>
+      <a href="https://warrimoo.net" class="nav-link nav-link--back">warrimoo.net</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,30 @@
+{% assign post = include.post %}
+<article class="post-card">
+  {% if post.image %}
+  <a href="{{ post.url | relative_url }}" class="post-card-image">
+    <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">
+  </a>
+  {% endif %}
+
+  <div class="post-card-body">
+    {% if post.categories.size > 0 %}
+    <div class="post-card-categories">
+      {% for cat in post.categories limit:2 %}
+      <span class="category-badge category-badge--sm">{{ cat }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <h2 class="post-card-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
+
+    <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+
+    <div class="post-card-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+      <span class="meta-sep">&middot;</span>
+      <span>{% assign words = post.content | number_of_words %}{% if words < 250 %}1{% else %}{{ words | divided_by: 250 }}{% endif %} min</span>
+    </div>
+  </div>
+</article>
