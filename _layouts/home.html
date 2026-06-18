@@ -2,19 +2,28 @@
 layout: default
 ---
 
-<section class="hero-blog">
-  <div class="hero-inner">
-    <h1 class="hero-title">{{ site.title }}</h1>
-    <p class="hero-subtitle">{{ site.description }}</p>
+<section class="blog-hero">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--sun);justify-content:center" data-reveal>
+      <svg viewBox="0 0 64 64" fill="currentColor" aria-hidden="true" style="width:19px;height:19px">
+        <ellipse cx="20" cy="22" rx="6" ry="8"/>
+        <ellipse cx="32" cy="18" rx="6" ry="8"/>
+        <ellipse cx="44" cy="22" rx="6" ry="8"/>
+        <path d="M16 40 Q16 30 32 30 Q48 30 48 40 Q48 47 44 50 Q40 47 36 50 Q32 53 28 50 Q24 47 20 50 Q16 47 16 40 Z"/>
+      </svg>
+      Warrimoo Blog
+    </p>
+    <h1 style="font-size:clamp(2rem,5vw,3rem)" data-reveal>Thoughts on AI, tech &amp; building things.</h1>
+    <p class="lead" data-reveal>{{ site.description }}</p>
   </div>
-  <div class="hero-wave">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="var(--sand-50)"/>
-    </svg>
+  <div class="blog-hero__foam" aria-hidden="true">
+    {% include foam-wave.html %}
   </div>
 </section>
 
-<section class="posts-section">
+<section class="section" data-fish="6">
+  <div class="blob blob--teal" style="width:380px;height:380px;top:-80px;right:-120px" aria-hidden="true"></div>
+  <div class="blob blob--sun" style="width:260px;height:260px;bottom:10%;left:-100px;animation-delay:-6s" aria-hidden="true"></div>
   <div class="container">
     <div class="posts-grid">
       {% for post in paginator.posts %}

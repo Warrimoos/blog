@@ -4,15 +4,21 @@ layout: default
 
 <article class="page">
   <header class="page-header">
-    <div class="container container--narrow">
-      <h1 class="page-title">{{ page.title }}</h1>
+    <div class="container--narrow">
+      <h1 data-reveal>{{ page.title }}</h1>
       {% if page.subtitle %}
-      <p class="page-subtitle">{{ page.subtitle }}</p>
+      <p class="lead" data-reveal>{{ page.subtitle }}</p>
       {% endif %}
+    </div>
+    <div class="page-header__foam" aria-hidden="true">
+      {% include foam-wave.html %}
     </div>
   </header>
 
-  <div class="page-body container container--narrow">
-    {{ content }}
-  </div>
+  <section data-fish="4">
+    <div class="blob blob--teal" style="width:280px;height:280px;top:5%;right:-100px" aria-hidden="true"></div>
+    <div class="page-body container--narrow" data-reveal>
+      {{ content }}
+    </div>
+  </section>
 </article>

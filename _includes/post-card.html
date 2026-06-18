@@ -1,5 +1,5 @@
 {% assign post = include.post %}
-<article class="post-card">
+<article class="clay-card" data-reveal="pop" style="display:flex;flex-direction:column">
   {% if post.image %}
   <a href="{{ post.url | relative_url }}" class="post-card-image">
     <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">

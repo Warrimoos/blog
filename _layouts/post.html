@@ -4,22 +4,22 @@ layout: default
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <div class="container container--narrow">
+    <div class="container--narrow">
       {% if page.categories.size > 0 %}
-      <div class="post-categories">
+      <div class="post-card-categories" style="justify-content:center" data-reveal>
         {% for cat in page.categories %}
         <a href="{{ '/categories' | relative_url }}#{{ cat | slugify }}" class="category-badge">{{ cat }}</a>
         {% endfor %}
       </div>
       {% endif %}
 
-      <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+      <h1 class="post-title" itemprop="headline" data-reveal>{{ page.title }}</h1>
 
       {% if page.subtitle %}
-      <p class="post-subtitle">{{ page.subtitle }}</p>
+      <p class="post-subtitle" data-reveal>{{ page.subtitle }}</p>
       {% endif %}
 
-      <div class="post-meta">
+      <div class="post-meta-row" data-reveal>
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
           {{ page.date | date: "%d %B %Y" }}
         </time>
@@ -27,42 +27,47 @@ layout: default
         <span class="reading-time">{% assign words = page.content | number_of_words %}{% if words < 250 %}1{% else %}{{ words | divided_by: 250 }}{% endif %} min read</span>
       </div>
     </div>
+    <div class="post-header__foam" aria-hidden="true">
+      {% include foam-wave.html %}
+    </div>
   </header>
 
   {% if page.image %}
-  <div class="post-hero-image">
-    <div class="container">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy">
-    </div>
+  <div class="post-hero-image container--narrow" data-reveal="pop">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy">
   </div>
   {% endif %}
 
-  <div class="post-body container container--narrow" itemprop="articleBody">
-    {{ content }}
-  </div>
-
-  <footer class="post-footer container container--narrow">
-    {% if page.tags.size > 0 %}
-    <div class="post-tags">
-      {% for tag in page.tags %}
-      <a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}" class="tag-pill">#{{ tag }}</a>
-      {% endfor %}
+  <section class="section--tight" data-fish="5">
+    <div class="blob blob--teal" style="width:300px;height:300px;top:10%;right:-120px" aria-hidden="true"></div>
+    <div class="blob blob--coral" style="width:240px;height:240px;bottom:20%;left:-100px;animation-delay:-8s" aria-hidden="true"></div>
+    <div class="post-body container--narrow" itemprop="articleBody" data-reveal>
+      {{ content }}
     </div>
-    {% endif %}
 
-    <nav class="post-nav">
-      {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="post-nav-link post-nav-prev">
-        <span class="post-nav-label">&larr; Previous</span>
-        <span class="post-nav-title">{{ page.previous.title }}</span>
-      </a>
+    <footer class="post-footer container--narrow">
+      {% if page.tags.size > 0 %}
+      <div class="post-tags" data-reveal>
+        {% for tag in page.tags %}
+        <a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}" class="tag-pill">#{{ tag }}</a>
+        {% endfor %}
+      </div>
       {% endif %}
-      {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="post-nav-link post-nav-next">
-        <span class="post-nav-label">Next &rarr;</span>
-        <span class="post-nav-title">{{ page.next.title }}</span>
-      </a>
-      {% endif %}
-    </nav>
-  </footer>
+
+      <nav class="post-nav" data-reveal>
+        {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}" class="post-nav-link post-nav-prev">
+          <span class="post-nav-label">&larr; Previous</span>
+          <span class="post-nav-title">{{ page.previous.title }}</span>
+        </a>
+        {% endif %}
+        {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}" class="post-nav-link post-nav-next">
+          <span class="post-nav-label">Next &rarr;</span>
+          <span class="post-nav-title">{{ page.next.title }}</span>
+        </a>
+        {% endif %}
+      </nav>
+    </footer>
+  </section>
 </article>

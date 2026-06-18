@@ -10,7 +10,7 @@ permalink: /tags/
   {% for tag in sorted_tags %}
     {% assign tag_name = tag[0] %}
     {% assign posts = tag[1] %}
-    <div class="taxonomy-group" id="{{ tag_name | slugify }}">
+    <div class="taxonomy-group" id="{{ tag_name | slugify }}" data-reveal>
       <h2 class="taxonomy-heading">
         #{{ tag_name }}
         <span class="count">{{ posts.size }}</span>

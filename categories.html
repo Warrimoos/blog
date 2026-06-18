@@ -10,7 +10,7 @@ permalink: /categories/
   {% for cat in sorted_cats %}
     {% assign cat_name = cat[0] %}
     {% assign posts = cat[1] %}
-    <div class="taxonomy-group" id="{{ cat_name | slugify }}">
+    <div class="taxonomy-group" id="{{ cat_name | slugify }}" data-reveal>
       <h2 class="taxonomy-heading">
         {{ cat_name }}
         <span class="count">{{ posts.size }}</span>

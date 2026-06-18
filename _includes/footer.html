@@ -1,27 +1,37 @@
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="https://warrimoo.net" class="footer-logo">Warrimoo</a>
-      <p class="footer-tagline">{{ site.description }}</p>
-    </div>
-
-    <div class="footer-links">
-      <div class="footer-col">
-        <h4>Blog</h4>
-        <a href="{{ '/' | relative_url }}">All Posts</a>
-        <a href="{{ '/categories' | relative_url }}">Categories</a>
-        <a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a>
+<div class="ink-band">
+  <svg class="wave-divider" viewBox="0 0 2880 90" preserveAspectRatio="none" aria-hidden="true" style="color:var(--sand-50)">
+    <path d="M0,0 H5760 V40 C5280,86 4800,56 4320,30 C3840,4 3360,76 2880,40 C2400,86 1920,56 1440,30 C960,4 480,76 0,40 Z" fill="currentColor"/>
+  </svg>
+  <footer class="site-footer" data-fish="4" data-fish-dark>
+    <div class="container">
+      <div>
+        <a class="footer-brand" href="https://warrimoo.net">warrimoo</a>
+        <p class="footer-tag">{{ site.description }}</p>
       </div>
-      <div class="footer-col">
-        <h4>Warrimoo</h4>
-        <a href="https://warrimoo.net">Home</a>
-        <a href="https://warrimoo.net/apps/treatmypet.html">TreatMyPet</a>
-        <a href="https://warrimoo.net/privacy.html">Privacy</a>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Blog</h4>
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">All posts</a></li>
+            <li><a href="{{ '/categories' | relative_url }}">Categories</a></li>
+            <li><a href="{{ '/about' | relative_url }}">About</a></li>
+            <li><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Warrimoo</h4>
+          <ul>
+            <li><a href="https://warrimoo.net">Home</a></li>
+            <li><a href="https://warrimoo.net/apps/treatmypet.html">TreatMyPet</a></li>
+            <li><a href="https://warrimoo.net/privacy.html">Privacy</a></li>
+            <li><a href="https://warrimoo.net/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>&copy; <span data-year>2026</span> Warrimoo. All rights reserved.</span>
+        <span>Built slowly, with care.</span>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; {{ 'now' | date: "%Y" }} Warrimoo. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
+</div>

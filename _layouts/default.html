@@ -6,11 +6,12 @@
 <body>
   {% include header.html %}
 
-  <main class="site-main">
+  <main>
     {{ content }}
   </main>
 
   {% include footer.html %}
+  {% include paw-fab.html %}
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
 </body>
 </html>
