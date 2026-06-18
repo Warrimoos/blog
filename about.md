@@ -22,4 +22,4 @@ Warrimoo is an Aboriginal word meaning "eagles nearby" — a nod to the place th
 
 ## Get in touch
 
-Drop me a line at [steve@warrimoo.net](mailto:steve@warrimoo.net) or find Warrimoo at [warrimoo.net](https://warrimoo.net).
+Drop me a line at appdev@warrimoo.net
