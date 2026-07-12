@@ -6,3 +6,9 @@ vendor/
 .bundle/
 *.gem
 Gemfile.lock
+
+# local tooling — never publish (blog-skill.md predates this rule and stays tracked)
+.claude/
+*.local
+.env
+.env.*

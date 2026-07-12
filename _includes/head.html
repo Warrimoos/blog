@@ -1,5 +1,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GitHub Pages can't send security headers, so CSP + referrer ship as meta tags.
+     If a future post embeds external media, extend the relevant directive:
+     images -> img-src, video/iframe embeds -> frame-src. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://warrimoo.net; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | truncatewords: 50 }}">
 <meta name="theme-color" content="#16384C">
