@@ -404,6 +404,20 @@ body.nav-locked { overflow: hidden; }
 }
 .fish--flip svg { scale: -1 1; }
 
+/* startle offsets and the scroll current live on their own layers so they
+   compose with the crossing and the bob instead of fighting them */
+.fish__dart {
+  display: block;
+  transform: translate(var(--dx, 0px), var(--dy, 0px));
+  transition: transform 0.55s var(--ease-spring);
+}
+.fish.is-startled .fish__tail { animation-duration: 0.22s; }
+
+.fish-layer {
+  translate: 0 var(--drift, 0px);
+  transition: translate 0.45s var(--ease-out);
+}
+
 .fish__tail {
   transform-box: fill-box;
   transform-origin: 0% 50%;
