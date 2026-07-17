@@ -58,5 +58,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - BACKLOG.md
   - node_modules
   - vendor
